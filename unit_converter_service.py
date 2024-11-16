@@ -1,4 +1,5 @@
 import zmq
+import time
 
 def convert_distance(activities):
     '''
@@ -26,6 +27,10 @@ def main():
         
         # convert miles to kilometers
         converted_activities = convert_distance(list(activities))
+
+        # artificial processing time
+        print('Converting from miles to kilometers...')
+        time.sleep(2)
 
         # send response
         socket.send_json(converted_activities)
