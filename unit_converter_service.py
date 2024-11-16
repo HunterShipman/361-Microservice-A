@@ -23,17 +23,21 @@ def main():
     print('Listening for requests...')
     while True:
         # recieve request
-        activities = socket.recv_json()
+        request = socket.recv_json()
+
+        # check if the action is "convert"
+        if request.get('action') == 'convert':
+            activities = request.get('data', [])
         
-        # convert miles to kilometers
-        converted_activities = convert_distance(list(activities))
+            # convert miles to kilometers
+            converted_activities = convert_distance(list(activities))
 
-        # artificial processing time
-        print('Converting from miles to kilometers...')
-        time.sleep(2)
+            # artificial processing time
+            print('Converting from miles to kilometers...')
+            time.sleep(2)
 
-        # send response
-        socket.send_json(converted_activities)
+            # send response
+            socket.send_json(converted_activities)
     
 
 if __name__ == '__main__':

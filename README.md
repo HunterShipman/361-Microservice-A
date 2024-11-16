@@ -7,7 +7,7 @@ unit_converter_service.py is the microservice
 converter_example.py is the test program shown in the video
 
 ## REQUESTING DATA:
-First you must set up ZeroMQ context and create a request socket, and then send a request. 'activities' is an example of what the JSON will need to look like, which is a list of dictionaries with each dictionary having a key named 'distance'. If you need to change the port, change the '5555' in "tcp://localhost:5555" to your new port. You must also change the port in the microservice, '5555' in "tcp://*:5555" to your new port.
+First you must set up ZeroMQ context and create a request socket, and then send a request. The variable 'activities' is an example of what the JSON will need to look like, which is a list of dictionaries with each dictionary having a key named 'distance'. The request must be in the form of a dictionary with an 'action' key that has a 'convert' value and a 'data' key with its corresponding value being the JSON you want to convert. If you need to change the port, change the '5555' in "tcp://localhost:5555" to your new port. You must also change the port in the microservice, '5555' in "tcp://*:5555" to your new port.
 
 ```python
 import zmq
@@ -23,8 +23,8 @@ activities = [
         {"id": 2, "name": "Walk", "distance": 2.0, "duration": "00:30:00"}
     ]
 
-# example request call
-socket.send_json(activities)
+# example request call, 'action' is set to 'covert'.
+socket.send_json({"action": "convert", "data": activities})
 ```
 
 ## RECEIVING DATA:

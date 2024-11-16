@@ -13,7 +13,7 @@ def main():
     print('Sending activities...')
 
     # send activities to microservice
-    socket.send_json(activities)
+    socket.send_json({"action": "convert", "data": activities})
 
     print('Converting units...')
 
