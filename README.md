@@ -2,6 +2,10 @@
 
 My unit converter service communicates via ZeroMQ and the microservice binds to port 5555. You must install ZeroMQ before using this microservice and include 'import zmq' in your main program. If you need to, you can change the port the microservice binds to incase it is already in use.
 
+## Files
+unit_converter_service.py is the microservice
+converter_example.py is the test program shown in the video
+
 ## REQUESTING DATA:
 First you must set up ZeroMQ context and create a request socket, and then send a request. 'activities' is an example of what the JSON will need to look like, which is a list of dictionaries with each dictionary having a key named 'distance'. If you need to change the port, change the '5555' in "tcp://localhost:5555" to your new port. You must also change the port in the microservice, '5555' in "tcp://*:5555" to your new port.
 
