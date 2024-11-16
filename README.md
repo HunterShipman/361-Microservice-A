@@ -38,3 +38,6 @@ converted_activities = socket.recv_json()
 In this example, converted_activities will be nearly identical to the JSON
 object given to the microservice, but with the 'distance' fields converted
 from miles to kilometers.
+
+## UML DIAGRAM
+![UML Diagram](https://github.com/HunterShipman/361-Microservice-A/blob/07a9d65607575afc5cbb540359f79bcb7970d36f/Diagram.png)
