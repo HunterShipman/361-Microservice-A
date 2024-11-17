@@ -19,8 +19,8 @@ socket.connect("tcp://localhost:5555")
 
 # example JSON
 activities = [
-        {"id": 1, "name": "Run", "distance": 5.0, "duration": "00:45:00"},
-        {"id": 2, "name": "Walk", "distance": 2.0, "duration": "00:30:00"}
+        {"id": 1, "name": "Run", "distance": 5.0, "duration": "00:45:00", 'elevation': 1000},
+        {"id": 2, "name": "Walk", "distance": 2.0, "duration": "00:30:00", 'elevation': 245}
     ]
 
 # example request call, 'action' is set to 'covert'.
